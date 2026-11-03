@@ -13,7 +13,7 @@
 
 ## 系统框图
 
-![系统整体框图](docs/images/fig2_system.png)
+![系统整体框图](./docs/images/fig2_system.png)
 
 系统以 FPGA 为核心，分为输入、处理、输出三部分：
 
