@@ -214,4 +214,4 @@ python scripts/bt_recorder.py --render recordings/示范.bin  # 重新渲染已�
 
 ## 许可证
 
-本仓库主要用于学习、竞赛与教学演示，目前未包含独立的 LICENSE 文件。如需开源，建议自行添加 MIT 或 Apache-2.0 许可证。
+本仓库主要用于学习、竞赛与教学演示，目前包含 MIT许可证。
