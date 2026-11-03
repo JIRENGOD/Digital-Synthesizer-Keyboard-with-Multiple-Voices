@@ -1,0 +1,36 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW5AST-138B" pn="GW5AST-LV138FPG676AC1/I0">gw5ast138b-007</Device>
+    <FileList>
+        <File path="src/i2s_dac_tx.v" type="file.verilog" enable="1"/>
+        <File path="src/key_debounce.v" type="file.verilog" enable="1"/>
+        <File path="src/pll_audio.v" type="file.verilog" enable="1"/>
+        <File path="src/sine_lut.v" type="file.verilog" enable="1"/>
+        <File path="src/piano/piano_params.v" type="file.verilog" enable="1"/>
+        <File path="src/piano/piano_voice.v" type="file.verilog" enable="1"/>
+        <File path="src/guitar/guitar_params.v" type="file.verilog" enable="1"/>
+        <File path="src/guitar/guitar_voice.v" type="file.verilog" enable="1"/>
+        <File path="src/guitar/gtr_amp.v" type="file.verilog" enable="1"/>
+        <File path="src/fx/fx_chorus.v" type="file.verilog" enable="1"/>
+        <File path="src/fx/fx_delay.v" type="file.verilog" enable="1"/>
+        <File path="src/fx/fx_reverb.v" type="file.verilog" enable="1"/>
+        <File path="src/spectrum/fft_roms.v" type="file.verilog" enable="1"/>
+        <File path="src/spectrum/spectrum.v" type="file.verilog" enable="1"/>
+        <File path="src/oled/oled_text_rom.v" type="file.verilog" enable="1"/>
+        <File path="src/oled/oled_frame.v" type="file.verilog" enable="1"/>
+        <File path="src/oled/oled_i2c.v" type="file.verilog" enable="1"/>
+        <File path="src/oled/oled_digit_rom.v" type="file.verilog" enable="1"/>
+        <File path="src/bt/uart.v" type="file.verilog" enable="1"/>
+        <File path="src/bt/recorder.v" type="file.verilog" enable="1"/>
+        <File path="src/touch/ttp229_rd.v" type="file.verilog" enable="1"/>
+        <File path="src/touch/touch_keys.v" type="file.verilog" enable="1"/>
+        <File path="src/voice_alloc.v" type="file.verilog" enable="1"/>
+        <File path="src/top_touch_synth.v" type="file.verilog" enable="1"/>
+        <File path="constraints/top_touch_synth.cst" type="file.cst" enable="1"/>
+        <File path="constraints/top_touch_synth.sdc" type="file.sdc" enable="1"/>
+        <File path="src/sine_lut.hex" type="file.other" enable="1"/>
+    </FileList>
+</Project>

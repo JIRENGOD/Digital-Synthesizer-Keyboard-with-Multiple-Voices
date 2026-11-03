@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW5AST-138B" package="FCPBGA676A" speed="1" partNumber="GW5AST-LV138FPG676AC1/I0"/>
+    <FileList>
+        <File path="C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\i2s_dac_tx.v" type="verilog"/>
+        <File path="C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\key_debounce.v" type="verilog"/>
+        <File path="C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\pll_audio.v" type="verilog"/>
+        <File path="C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\sine_lut.v" type="verilog"/>
+        <File path="C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_params.v" type="verilog"/>
+        <File path="C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_voice.v" type="verilog"/>
+        <File path="C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_params.v" type="verilog"/>
+        <File path="C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v" type="verilog"/>
+        <File path="C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\gtr_amp.v" type="verilog"/>
+        <File path="C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\fx\fx_chorus.v" type="verilog"/>
+        <File path="C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\fx\fx_delay.v" type="verilog"/>
+        <File path="C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\fx\fx_reverb.v" type="verilog"/>
+        <File path="C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\touch\ttp229_rd.v" type="verilog"/>
+        <File path="C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\touch\touch_keys.v" type="verilog"/>
+        <File path="C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\voice_alloc.v" type="verilog"/>
+        <File path="C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\top_touch_synth.v" type="verilog"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="0"/>
+        <Option type="dsp_style" value="auto"/>
+        <Option type="enable_dsrm" value="0"/>
+        <Option type="global_freq" value="100.000"/>
+        <Option type="looplimit" value="2000"/>
+        <Option type="map_option" value="1"/>
+        <Option type="max_fanout" value="1000"/>
+        <Option type="netlist_hierarchy" value="1"/>
+        <Option type="opt_goal" value="auto"/>
+        <Option type="output_file" value="C:\Users\25710\Desktop\verilog\music_piano\music_piano\impl\gwsynthesis\music_piano.vg"/>
+        <Option type="print_all_synthesis_warning" value="0"/>
+        <Option type="ram_rw_check" value="0"/>
+        <Option type="ram_style" value="auto"/>
+        <Option type="rom_style" value="auto"/>
+        <Option type="shift_reg" value="auto"/>
+        <Option type="top_module" value="top_touch_synth"/>
+        <Option type="vcc" value="0.9"/>
+        <Option type="verilog_language" value="verilog-2001"/>
+        <Option type="vhdl_language" value="vhdl-1993"/>
+    </OptionList>
+</Project>

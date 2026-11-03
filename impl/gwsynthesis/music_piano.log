@@ -1,0 +1,100 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\i2s_dac_tx.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\key_debounce.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\pll_audio.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\sine_lut.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_params.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_voice.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_params.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\gtr_amp.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\fx\fx_chorus.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\fx\fx_delay.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\fx\fx_reverb.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\touch\ttp229_rd.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\touch\touch_keys.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\voice_alloc.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\top_touch_synth.v'
+Compiling module 'top_touch_synth'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\top_touch_synth.v":29)
+Compiling module 'pll_audio(TICK_NUM=1,TICK_DEN=8)'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\pll_audio.v":36)
+Compiling module 'key_debounce(STABLE=980)'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\key_debounce.v":9)
+Compiling module 'ttp229_rd'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\touch\ttp229_rd.v":17)
+Compiling module 'touch_keys(KEY_REVERSE=1)'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\touch\touch_keys.v":13)
+Compiling module 'voice_alloc'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\voice_alloc.v":14)
+Extracting RAM for identifier 'vid'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\voice_alloc.v":43)
+Extracting RAM for identifier 'stamp'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\voice_alloc.v":44)
+Compiling module 'piano_voice'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_voice.v":33)
+Extracting RAM for identifier 'ph_mem'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_voice.v":109)
+Extracting RAM for identifier 'env_mem'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_voice.v":110)
+Extracting RAM for identifier 'stg_mem'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_voice.v":111)
+Extracting RAM for identifier 'cnt_mem'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_voice.v":112)
+Compiling module 'piano_params'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_params.v":62)
+Compiling module 'sine_lut'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\sine_lut.v":23)
+Extracting RAM for identifier 'rom'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\sine_lut.v":34)
+Compiling module 'guitar_voice(SEED=16'b1010110011100001)'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":16)
+Extracting RAM for identifier 'dl'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":45)
+Compiling module 'guitar_params'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_params.v":30)
+WARN  (EX3791) : Expression size 35 truncated to fit in target size 21("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":117)
+Compiling module 'guitar_voice(SEED=16'b1011111110110110)'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":16)
+Extracting RAM for identifier 'dl'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":45)
+WARN  (EX3791) : Expression size 35 truncated to fit in target size 21("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":117)
+Compiling module 'guitar_voice(SEED=16'b1000101001001111)'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":16)
+Extracting RAM for identifier 'dl'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":45)
+WARN  (EX3791) : Expression size 35 truncated to fit in target size 21("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":117)
+Compiling module 'guitar_voice(SEED=16'b1001011011100100)'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":16)
+Extracting RAM for identifier 'dl'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":45)
+WARN  (EX3791) : Expression size 35 truncated to fit in target size 21("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":117)
+Compiling module 'guitar_voice(SEED=16'b1110000110111101)'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":16)
+Extracting RAM for identifier 'dl'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":45)
+WARN  (EX3791) : Expression size 35 truncated to fit in target size 21("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":117)
+Compiling module 'guitar_voice(SEED=16'b1100110001010010)'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":16)
+Extracting RAM for identifier 'dl'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":45)
+WARN  (EX3791) : Expression size 35 truncated to fit in target size 21("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":117)
+Compiling module 'guitar_voice(SEED=16'b1101100011101011)'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":16)
+Extracting RAM for identifier 'dl'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":45)
+WARN  (EX3791) : Expression size 35 truncated to fit in target size 21("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":117)
+Compiling module 'guitar_voice(SEED=16'b0010101110000000)'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":16)
+Extracting RAM for identifier 'dl'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":45)
+WARN  (EX3791) : Expression size 35 truncated to fit in target size 21("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\guitar_voice.v":117)
+Compiling module 'gtr_amp'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\guitar\gtr_amp.v":12)
+Compiling module 'fx_chorus'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\fx\fx_chorus.v":13)
+Extracting RAM for identifier 'mem'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\fx\fx_chorus.v":32)
+WARN  (EX3791) : Expression size 25 truncated to fit in target size 24("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\fx\fx_chorus.v":134)
+Compiling module 'fx_delay'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\fx\fx_delay.v":12)
+Extracting RAM for identifier 'mem_l'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\fx\fx_delay.v":34)
+Extracting RAM for identifier 'mem_r'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\fx\fx_delay.v":35)
+WARN  (EX3791) : Expression size 19 truncated to fit in target size 18("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\fx\fx_delay.v":115)
+Compiling module 'fx_reverb'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\fx\fx_reverb.v":12)
+Extracting RAM for identifier 'mem'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\fx\fx_reverb.v":73)
+Extracting RAM for identifier 'ptr'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\fx\fx_reverb.v":85)
+Extracting RAM for identifier 'fs'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\fx\fx_reverb.v":86)
+Compiling module 'i2s_dac_tx'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\i2s_dac_tx.v":25)
+NOTE  (EX0101) : Current top module is "top_touch_synth"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "piano_params" instantiated to "u_piano_params" is swept in optimizing("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_voice.v":88)
+WARN  (NL0002) : The module "piano_params" instantiated to "u_piano_params" is swept in optimizing("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_voice.v":88)
+WARN  (NL0002) : The module "piano_params" instantiated to "u_piano_params" is swept in optimizing("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_voice.v":88)
+WARN  (NL0002) : The module "piano_params" instantiated to "u_piano_params" is swept in optimizing("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_voice.v":88)
+WARN  (NL0002) : The module "piano_params" instantiated to "u_piano_params" is swept in optimizing("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_voice.v":88)
+WARN  (NL0002) : The module "piano_params" instantiated to "u_piano_params" is swept in optimizing("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_voice.v":88)
+WARN  (NL0002) : The module "piano_params" instantiated to "u_piano_params" is swept in optimizing("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_voice.v":88)
+WARN  (NL0002) : The module "piano_params" instantiated to "u_piano_params" is swept in optimizing("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\piano\piano_voice.v":88)
+[95%] Generate netlist file "C:\Users\25710\Desktop\verilog\music_piano\music_piano\impl\gwsynthesis\music_piano.vg" completed
+[100%] Generate report file "C:\Users\25710\Desktop\verilog\music_piano\music_piano\impl\gwsynthesis\music_piano_syn.rpt.html" completed
+GowinSynthesis finish

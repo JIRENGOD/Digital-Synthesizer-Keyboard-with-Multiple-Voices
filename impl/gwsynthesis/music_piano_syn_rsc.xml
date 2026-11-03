@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top_touch_synth" Register="266" Alu="77" Lut="619" MULTALU27X18="2" T_Register="5708(266)" T_Alu="3020(77)" T_Lut="6381(619)" T_MULTALU27X18="35(2)" T_Bsram="135(0)">
+ <SubModule name="u_pll_audio" Register="17" Lut="32" T_Register="17(17)" T_Lut="32(32)"/>
+ <SubModule name="u_key_fx" Register="24" Lut="44" T_Register="24(24)" T_Lut="44(44)"/>
+ <SubModule name="u_key_vol" Register="24" Lut="43" T_Register="24(24)" T_Lut="43(43)"/>
+ <SubModule name="u_key_demo" Register="24" Lut="44" T_Register="24(24)" T_Lut="44(44)"/>
+ <SubModule name="u_key_tone" Register="24" Lut="43" T_Register="24(24)" T_Lut="43(43)"/>
+ <SubModule name="u_ttp229_rd" Register="89" Alu="16" Lut="115" T_Register="89(89)" T_Alu="16(16)" T_Lut="115(115)"/>
+ <SubModule name="u_touch_keys" Register="26" Lut="46" T_Register="26(26)" T_Lut="46(46)"/>
+ <SubModule name="u_voice_alloc" Register="319" Alu="66" Lut="232" T_Register="319(319)" T_Alu="66(66)" T_Lut="232(232)"/>
+ <SubModule name="g_voice[0].u_piano_voice" Register="170" Alu="167" Lut="366" Bsram="5" T_Register="170(170)" T_Alu="167(167)" T_Lut="366(366)" T_Bsram="9(5)">
+  <SubModule name="u_sine_lut" Bsram="4" T_Bsram="4(4)"/>
+ </SubModule>
+ <SubModule name="g_voice[0].u_guitar_voice" Register="304" Alu="132" Lut="140" MULTALU27X18="2" Bsram="1" T_Register="304(304)" T_Alu="132(132)" T_Lut="183(140)" T_MULTALU27X18="2(2)" T_Bsram="1(1)">
+  <SubModule name="u_guitar_params" Lut="43" T_Lut="43(43)"/>
+ </SubModule>
+ <SubModule name="g_voice[1].u_piano_voice" Register="169" Alu="167" Lut="368" Bsram="5" T_Register="169(169)" T_Alu="167(167)" T_Lut="368(368)" T_Bsram="9(5)">
+  <SubModule name="u_sine_lut" Bsram="4" T_Bsram="4(4)"/>
+ </SubModule>
+ <SubModule name="g_voice[1].u_guitar_voice" Register="304" Alu="132" Lut="140" MULTALU27X18="2" Bsram="1" T_Register="304(304)" T_Alu="132(132)" T_Lut="183(140)" T_MULTALU27X18="2(2)" T_Bsram="1(1)">
+  <SubModule name="u_guitar_params" Lut="43" T_Lut="43(43)"/>
+ </SubModule>
+ <SubModule name="g_voice[2].u_piano_voice" Register="169" Alu="167" Lut="363" Bsram="5" T_Register="169(169)" T_Alu="167(167)" T_Lut="363(363)" T_Bsram="9(5)">
+  <SubModule name="u_sine_lut" Bsram="4" T_Bsram="4(4)"/>
+ </SubModule>
+ <SubModule name="g_voice[2].u_guitar_voice" Register="304" Alu="132" Lut="140" MULTALU27X18="2" Bsram="1" T_Register="304(304)" T_Alu="132(132)" T_Lut="183(140)" T_MULTALU27X18="2(2)" T_Bsram="1(1)">
+  <SubModule name="u_guitar_params" Lut="43" T_Lut="43(43)"/>
+ </SubModule>
+ <SubModule name="g_voice[3].u_piano_voice" Register="169" Alu="167" Lut="369" Bsram="5" T_Register="169(169)" T_Alu="167(167)" T_Lut="369(369)" T_Bsram="9(5)">
+  <SubModule name="u_sine_lut" Bsram="4" T_Bsram="4(4)"/>
+ </SubModule>
+ <SubModule name="g_voice[3].u_guitar_voice" Register="304" Alu="132" Lut="140" MULTALU27X18="2" Bsram="1" T_Register="304(304)" T_Alu="132(132)" T_Lut="183(140)" T_MULTALU27X18="2(2)" T_Bsram="1(1)">
+  <SubModule name="u_guitar_params" Lut="43" T_Lut="43(43)"/>
+ </SubModule>
+ <SubModule name="g_voice[4].u_piano_voice" Register="169" Alu="167" Lut="367" Bsram="5" T_Register="169(169)" T_Alu="167(167)" T_Lut="367(367)" T_Bsram="9(5)">
+  <SubModule name="u_sine_lut" Bsram="4" T_Bsram="4(4)"/>
+ </SubModule>
+ <SubModule name="g_voice[4].u_guitar_voice" Register="304" Alu="132" Lut="140" MULTALU27X18="2" Bsram="1" T_Register="304(304)" T_Alu="132(132)" T_Lut="183(140)" T_MULTALU27X18="2(2)" T_Bsram="1(1)">
+  <SubModule name="u_guitar_params" Lut="43" T_Lut="43(43)"/>
+ </SubModule>
+ <SubModule name="g_voice[5].u_piano_voice" Register="169" Alu="167" Lut="364" Bsram="5" T_Register="169(169)" T_Alu="167(167)" T_Lut="364(364)" T_Bsram="9(5)">
+  <SubModule name="u_sine_lut" Bsram="4" T_Bsram="4(4)"/>
+ </SubModule>
+ <SubModule name="g_voice[5].u_guitar_voice" Register="304" Alu="132" Lut="140" MULTALU27X18="2" Bsram="1" T_Register="304(304)" T_Alu="132(132)" T_Lut="183(140)" T_MULTALU27X18="2(2)" T_Bsram="1(1)">
+  <SubModule name="u_guitar_params" Lut="43" T_Lut="43(43)"/>
+ </SubModule>
+ <SubModule name="g_voice[6].u_piano_voice" Register="169" Alu="167" Lut="363" Bsram="5" T_Register="169(169)" T_Alu="167(167)" T_Lut="363(363)" T_Bsram="9(5)">
+  <SubModule name="u_sine_lut" Bsram="4" T_Bsram="4(4)"/>
+ </SubModule>
+ <SubModule name="g_voice[6].u_guitar_voice" Register="304" Alu="132" Lut="140" MULTALU27X18="2" Bsram="1" T_Register="304(304)" T_Alu="132(132)" T_Lut="183(140)" T_MULTALU27X18="2(2)" T_Bsram="1(1)">
+  <SubModule name="u_guitar_params" Lut="43" T_Lut="43(43)"/>
+ </SubModule>
+ <SubModule name="g_voice[7].u_piano_voice" Register="169" Alu="168" Lut="365" Bsram="5" T_Register="169(169)" T_Alu="168(168)" T_Lut="365(365)" T_Bsram="9(5)">
+  <SubModule name="u_sine_lut" Bsram="4" T_Bsram="4(4)"/>
+ </SubModule>
+ <SubModule name="g_voice[7].u_guitar_voice" Register="304" Alu="132" Lut="140" MULTALU27X18="2" Bsram="1" T_Register="304(304)" T_Alu="132(132)" T_Lut="183(140)" T_MULTALU27X18="2(2)" T_Bsram="1(1)">
+  <SubModule name="u_guitar_params" Lut="43" T_Lut="43(43)"/>
+ </SubModule>
+ <SubModule name="u_gtr_amp" Register="89" Alu="69" Lut="33" MULTALU27X18="5" T_Register="89(89)" T_Alu="69(69)" T_Lut="33(33)" T_MULTALU27X18="5(5)"/>
+ <SubModule name="u_fx_chorus" Register="177" Alu="111" Lut="157" MULTALU27X18="7" Bsram="1" T_Register="177(177)" T_Alu="111(111)" T_Lut="157(157)" T_MULTALU27X18="7(7)" T_Bsram="1(1)"/>
+ <SubModule name="u_fx_delay" Register="202" Alu="104" Lut="90" MULTALU27X18="3" Bsram="36" T_Register="202(202)" T_Alu="104(104)" T_Lut="90(90)" T_MULTALU27X18="3(3)" T_Bsram="36(36)"/>
+ <SubModule name="u_fx_reverb" Register="600" Alu="178" Lut="454" MULTALU27X18="2" Bsram="18" T_Register="600(600)" T_Alu="178(178)" T_Lut="454(454)" T_MULTALU27X18="2(2)" T_Bsram="18(18)"/>
+ <SubModule name="u_i2s_dac_tx" Register="42" Alu="6" Lut="40" T_Register="42(42)" T_Alu="6(6)" T_Lut="40(40)"/>
+</Module>

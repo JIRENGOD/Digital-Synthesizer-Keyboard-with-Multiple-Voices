@@ -1,0 +1,50 @@
+//==============================================================================
+// top_i2s_sine.cst —— Tang Mega 60K（GW5AT-LV60PG484AC1/I0）引脚约束模板
+//------------------------------------------------------------------------------
+// !!! 请根据你的 Tang Mega 60K 底板原理图 / Sipeed 官方引脚定义，将问号替换为实际
+// !!! 引脚编号，IO_TYPE 设为 LVCMOS33。
+//
+// 填写说明：
+//   1. "?" 替换为 BGA 球号（字母+数字），去掉问号，例如  IO_LOC "o_i2s_bck" <球号>;
+//      任何一个 "?" 没替换，布局布线都会报错——这是故意的，防止用猜的引脚生成比特流。
+//   2. 原理图上 DAC 的信号名可能不同：
+//        BCK  = BCLK / SCK / SCLK / BITCLK
+//        LRCK = LRCLK / WS / WCLK / LRC
+//        SDATA= DIN / SDIN / DATA / SD
+//        MCLK = SCK(PCM5102A) / SYSCLK / XTI
+//      注意 PCM5102A 的 "SCK" 是系统时钟(MCLK)，它的位时钟叫 "BCK"。
+//   3. IO_TYPE=LVCMOS33 的前提是该引脚所在 Bank 的 VCCIO = 3.3 V。若原理图显示
+//      VCCIO 为 1.8 V / 2.5 V 等，IO_TYPE 必须改成对应电平（LVCMOS18 / LVCMOS25）。
+//   4. 50 MHz 晶振引脚同样是板卡相关的，请从原理图确认后填入，不要省略。
+//   5. 可选端口要和 src/top_i2s_sine.v 顶部的宏保持一致：
+//        - 定义了 TOP_USE_MCLK  -> 保留 o_i2s_mclk 两行；DAC 没有 MCLK 脚则
+//          注释掉该宏并删掉这两行（不要让输出口悬空自动布线到未知引脚）。
+//        - 定义了 TOP_USE_PA_EN -> 取消注释 o_pa_en 两行并填入引脚。
+//   6. 若所选引脚是配置复用脚（MSPI/SSPI/JTAG 等），需在工程
+//      Configuration -> Dual-Purpose Pin 中勾选对应 "Use ... as regular IO"。
+//==============================================================================
+
+// ---------------- 系统时钟：板载 50 MHz 单端晶振 ----------------
+IO_LOC  "i_clk_50m" ?;
+IO_PORT "i_clk_50m" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+
+// ---------------- I2S 到板载 DAC ----------------
+// MCLK：256 x Fs（CLK_MODE=0 时 12.288 MHz，CLK_MODE=1 时 12.5 MHz）
+IO_LOC  "o_i2s_mclk" ?;
+IO_PORT "o_i2s_mclk" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8;
+
+// BCK：64 x Fs = 3.072 MHz
+IO_LOC  "o_i2s_bck" ?;
+IO_PORT "o_i2s_bck" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8;
+
+// LRCK：Fs = 48 kHz（标准 I2S：低电平 = 左声道）
+IO_LOC  "o_i2s_lrck" ?;
+IO_PORT "o_i2s_lrck" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8;
+
+// SDATA：MSB 先发，BCK 下降沿变化、上升沿稳定
+IO_LOC  "o_i2s_sdata" ?;
+IO_PORT "o_i2s_sdata" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8;
+
+// ---------------- 可选：功放 / DAC 使能（需在 top_i2s_sine.v 中打开 TOP_USE_PA_EN） ----------------
+// IO_LOC  "o_pa_en" ?;
+// IO_PORT "o_pa_en" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8;

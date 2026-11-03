@@ -1,0 +1,46 @@
+[
+ {
+  "InstFile" : "C:/Users/25710/Desktop/verilog/music_piano/music_piano/src/top_i2s_sine.v",
+  "InstLine" : 40,
+  "InstName" : "top_i2s_sine",
+  "ModuleFile" : "C:/Users/25710/Desktop/verilog/music_piano/music_piano/src/top_i2s_sine.v",
+  "ModuleLine" : 40,
+  "ModuleName" : "top_i2s_sine",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Users/25710/Desktop/verilog/music_piano/music_piano/src/top_i2s_sine.v",
+    "InstLine" : 80,
+    "InstName" : "u_pll_audio",
+    "ModuleFile" : "C:/Users/25710/Desktop/verilog/music_piano/music_piano/src/pll_audio.v",
+    "ModuleLine" : 36,
+    "ModuleName" : "pll_audio"
+   },
+   {
+    "InstFile" : "C:/Users/25710/Desktop/verilog/music_piano/music_piano/src/top_i2s_sine.v",
+    "InstLine" : 133,
+    "InstName" : "u_nco_sine",
+    "ModuleFile" : "C:/Users/25710/Desktop/verilog/music_piano/music_piano/src/nco_sine.v",
+    "ModuleLine" : 23,
+    "ModuleName" : "nco_sine",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/25710/Desktop/verilog/music_piano/music_piano/src/nco_sine.v",
+      "InstLine" : 74,
+      "InstName" : "u_sine_lut",
+      "ModuleFile" : "C:/Users/25710/Desktop/verilog/music_piano/music_piano/src/sine_lut.v",
+      "ModuleLine" : 22,
+      "ModuleName" : "sine_lut"
+     }
+    ]
+   },
+   {
+    "InstFile" : "C:/Users/25710/Desktop/verilog/music_piano/music_piano/src/top_i2s_sine.v",
+    "InstLine" : 155,
+    "InstName" : "u_i2s_master",
+    "ModuleFile" : "C:/Users/25710/Desktop/verilog/music_piano/music_piano/src/i2s_master.v",
+    "ModuleLine" : 34,
+    "ModuleName" : "i2s_master"
+   }
+  ]
+ }
+]

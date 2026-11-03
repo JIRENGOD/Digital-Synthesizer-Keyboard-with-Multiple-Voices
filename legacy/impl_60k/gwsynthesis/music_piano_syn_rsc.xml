@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top_i2s_sine" Register="34" Alu="30" Lut="16" T_Register="175(34)" T_Alu="38(30)" T_Lut="186(16)" T_Bsram="4(0)">
+ <SubModule name="u_pll_audio" Register="17" Lut="27" T_Register="17(17)" T_Lut="27(27)"/>
+ <SubModule name="u_nco_sine" Register="63" Lut="86" T_Register="63(63)" T_Lut="86(86)" T_Bsram="4(0)">
+  <SubModule name="u_sine_lut" Bsram="4" T_Bsram="4(4)"/>
+ </SubModule>
+ <SubModule name="u_i2s_master" Register="61" Alu="8" Lut="57" T_Register="61(61)" T_Alu="8(8)" T_Lut="57(57)"/>
+</Module>

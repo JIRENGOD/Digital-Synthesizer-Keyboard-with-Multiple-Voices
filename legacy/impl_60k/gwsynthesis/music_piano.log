@@ -1,0 +1,33 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\i2s_master.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\nco_sine.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\pll_audio.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\sine_lut.v'
+Analyzing Verilog file 'C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\top_i2s_sine.v'
+Compiling module 'top_i2s_sine'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\top_i2s_sine.v":40)
+Compiling module 'pll_audio'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\pll_audio.v":33)
+Compiling module 'nco_sine'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\nco_sine.v":23)
+Compiling module 'sine_lut'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\sine_lut.v":22)
+Extracting RAM for identifier 'rom'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\sine_lut.v":33)
+Compiling module 'i2s_master'("C:\Users\25710\Desktop\verilog\music_piano\music_piano\src\i2s_master.v":34)
+NOTE  (EX0101) : Current top module is "top_i2s_sine"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "C:\Users\25710\Desktop\verilog\music_piano\music_piano\impl\gwsynthesis\music_piano.vg" completed
+[100%] Generate report file "C:\Users\25710\Desktop\verilog\music_piano\music_piano\impl\gwsynthesis\music_piano_syn.rpt.html" completed
+GowinSynthesis finish

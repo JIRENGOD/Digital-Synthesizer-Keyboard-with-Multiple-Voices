@@ -1,0 +1,94 @@
+//==============================================================================
+// top_touch_synth.cst —— 引脚约束：Tang Mega 138K Pro 核心板 + Tang Mega 138K Pro Dock 底板
+// 器件：GW5AST-LV138FPG676AC1/I0（FCPBGA676A 封装）
+//------------------------------------------------------------------------------
+// 依据 tang_mega_138k-pro_pins.cst：
+//   clk P16；HP_BCK E22、HP_WS F24、HP_DIN G24；key[0] K16、key[1] G15、key[2] F15、key[3] G16；
+//   led[0..5] = R26 J14 L20 M25 N21 N23（低电平亮）
+// 引脚表里没有的，按 TANG_MEGA-138K_Pro-Dock 原理图：
+//   PA_EN = H17 → R248 → XPT4809 EN（1 = 工作）
+//   PMOD 口 = 底板顶边三个 2×6 排母（J22 = PMOD0、J24 = PMOD1、J26 = PMOD2），每个口两排相同：
+//   从 3V3 那一端数第 1 列 3V3、第 2 列 GND、第 3 列 = 第 5/6 针、第 4 列 = 第 7/8 针
+//   触摸键盘接 PMOD2，OLED 接 PMOD1，蓝牙 HC-05 接 PMOD0，都是两排都能接，见文件末尾
+//   PMOD0 的 R16 R17 L24 T24 兼作 SSPI 配置脚，工程配置里已设为普通 IO（Use SSPI as regular IO）
+// 注意：R26 / L20 / M25 / N23 兼作 CPU 配置脚，工程配置里必须勾选
+//       “Use CPU as regular IO” 和 “Use SSPI as regular IO”，否则布局布线报 PR2017。
+//==============================================================================
+
+// ---- 时钟：核心板 50 MHz 晶振（clk）----
+IO_LOC  "i_clk_50m" P16;
+IO_PORT "i_clk_50m" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+// ---- 串行音频 → U6 PT8211（HP_BCK / HP_WS / HP_DIN）----
+IO_LOC  "o_i2s_bck" E22;
+IO_PORT "o_i2s_bck" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+
+IO_LOC  "o_i2s_lrck" F24;
+IO_PORT "o_i2s_lrck" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+
+IO_LOC  "o_i2s_sdata" G24;
+IO_PORT "o_i2s_sdata" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+
+// ---- 耳机功放使能 → R248 → U32 XPT4809 EN（PA_EN）：常为 1 ----
+IO_LOC  "o_pa_en" H17;
+IO_PORT "o_pa_en" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+
+// ---- 按键（按下为 0）----
+IO_LOC  "i_key_fx_n" K16;       // key[0]：效果器切换
+IO_PORT "i_key_fx_n" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+IO_LOC  "i_key_vol_n" G15;      // key[1]：音量
+IO_PORT "i_key_vol_n" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+IO_LOC  "i_key_rec_n" F15;      // key[2]：录音开始 / 停止
+IO_PORT "i_key_rec_n" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+IO_LOC  "i_key_tone_n" G16;     // key[3]：音色切换
+IO_PORT "i_key_tone_n" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+// ---- 指示灯 led[0]~led[5]（低电平亮）----
+IO_LOC  "o_led_n[0]" R26;
+IO_PORT "o_led_n[0]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC  "o_led_n[1]" J14;
+IO_PORT "o_led_n[1]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC  "o_led_n[2]" L20;
+IO_PORT "o_led_n[2]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC  "o_led_n[3]" M25;
+IO_PORT "o_led_n[3]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC  "o_led_n[4]" N21;
+IO_PORT "o_led_n[4]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC  "o_led_n[5]" N23;
+IO_PORT "o_led_n[5]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+
+// ---- 触摸键盘（TTP229）：PMOD2（J26），两排都能接 ----
+// 第 5、6 针 = SCL（同一个信号），第 7、8 针 = SDO（内部上拉，两个针在 FPGA 里相与）
+IO_LOC  "o_tp_scl[0]" A17;      // PMOD2 第 5 针
+IO_PORT "o_tp_scl[0]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC  "o_tp_scl[1]" A18;      // PMOD2 第 6 针
+IO_PORT "o_tp_scl[1]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC  "i_tp_sdo[0]" B19;      // PMOD2 第 7 针
+IO_PORT "i_tp_sdo[0]" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_LOC  "i_tp_sdo[1]" A19;      // PMOD2 第 8 针
+IO_PORT "i_tp_sdo[1]" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+// ---- 蓝牙 HC-05（串口 9600 波特）：PMOD0（J22），两排都能接 ----
+// 第 5、6 针 → HC-05 RXD（同一个信号），第 7、8 针 ← HC-05 TXD（内部上拉，两个针在 FPGA 里相与）
+IO_LOC  "o_bt_tx[0]" R17;       // PMOD0 第 5 针
+IO_PORT "o_bt_tx[0]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC  "o_bt_tx[1]" T24;       // PMOD0 第 6 针
+IO_PORT "o_bt_tx[1]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC  "i_bt_rx[0]" R16;       // PMOD0 第 7 针
+IO_PORT "i_bt_rx[0]" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_LOC  "i_bt_rx[1]" L24;       // PMOD0 第 8 针
+IO_PORT "i_bt_rx[1]" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+// ---- OLED（0.96 寸 I2C，SSD1306 / SSD1315）：PMOD1（J24），两排都能接 ----
+// 第 5、6 针 = SCL（同一个信号），第 7、8 针 = SDA（双向，内部上拉；只在应答位松开）
+IO_LOC  "o_oled_scl[0]" H14;    // PMOD1 第 5 针
+IO_PORT "o_oled_scl[0]" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC  "o_oled_scl[1]" H15;    // PMOD1 第 6 针
+IO_PORT "o_oled_scl[1]" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC  "io_oled_sda[0]" L17;   // PMOD1 第 7 针
+IO_PORT "io_oled_sda[0]" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC  "io_oled_sda[1]" L18;   // PMOD1 第 8 针
+IO_PORT "io_oled_sda[1]" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;

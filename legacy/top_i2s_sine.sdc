@@ -1,0 +1,2 @@
+// top_i2s_sine.sdc —— 时序约束：板载 50 MHz 时钟（全部逻辑都在这个时钟域内）
+create_clock -name clk_50m -period 20 -waveform {0 10} [get_ports {i_clk_50m}]

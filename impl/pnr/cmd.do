@@ -1,0 +1,23 @@
+-d C:\Users\25710\Desktop\verilog\music_piano\music_piano\impl\gwsynthesis\music_piano.vg
+-p GW5AST-138B-FCPBGA676A-1
+-pn GW5AST-LV138FPG676AC1/I0
+-cst C:\Users\25710\Desktop\verilog\music_piano\music_piano\constraints\top_touch_synth.cst
+-cfg C:\Users\25710\Desktop\verilog\music_piano\music_piano\impl\pnr\device.cfg
+-sdc C:\Users\25710\Desktop\verilog\music_piano\music_piano\constraints\top_touch_synth.sdc
+-bit
+-tr
+-ph
+-timing
+-ireg_not_in_iob
+-oreg_not_in_iob
+-ioreg_not_in_iob
+-cst_error
+-convert_sdp32_36_to_sdp16_18
+-place_option 3
+-route_option 2
+-retiming_resource none
+-clock_route_order 0
+-correct_hold 1
+-route_maxfan 23
+-global_freq 100.000
+-enable_dsrm 0

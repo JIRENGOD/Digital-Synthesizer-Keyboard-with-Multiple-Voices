@@ -1,0 +1,53 @@
+//==============================================================================
+// top_piano_do.cst —— 引脚约束：Tang Mega 138K Pro 核心板 + Tang Mega 138K Pro Dock 底板
+// 器件：GW5AST-LV138FPG676AC1/I0（FCPBGA676A 封装）
+//------------------------------------------------------------------------------
+// 依据 tang_mega_138k-pro_pins.cst：
+//   clk P16；HP_BCK E22、HP_WS F24、HP_DIN G24；key[0] K16、key[1] G15、key[2] F15；
+//   led[0..5] = R26 J14 L20 M25 N21 N23（低电平亮）
+// 引脚表里没有 PA_EN，按 TANG_MEGA-138K_Pro-Dock 原理图：PA_EN = H17 → R248 → XPT4809 EN（1 = 工作）
+// 注意：R26 / L20 / M25 / N23 兼作 CPU 配置脚，工程配置里必须勾选
+//       “Use CPU as regular IO” 和 “Use SSPI as regular IO”，否则布局布线报 PR2017。
+//==============================================================================
+
+// ---- 时钟：核心板 50 MHz 晶振（clk）----
+IO_LOC  "i_clk_50m" P16;
+IO_PORT "i_clk_50m" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+// ---- 串行音频 → U6 PT8211（HP_BCK / HP_WS / HP_DIN）----
+IO_LOC  "o_i2s_bck" E22;
+IO_PORT "o_i2s_bck" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+
+IO_LOC  "o_i2s_lrck" F24;
+IO_PORT "o_i2s_lrck" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+
+IO_LOC  "o_i2s_sdata" G24;
+IO_PORT "o_i2s_sdata" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+
+// ---- 耳机功放使能 → R248 → U32 XPT4809 EN（PA_EN）：常为 1 ----
+IO_LOC  "o_pa_en" H17;
+IO_PORT "o_pa_en" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+
+// ---- 按键（按下为 0）----
+IO_LOC  "i_key_n" K16;          // key[0]：弹奏
+IO_PORT "i_key_n" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+IO_LOC  "i_key_vol_n" G15;      // key[1]：音量
+IO_PORT "i_key_vol_n" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+IO_LOC  "i_key_mode_n" F15;     // key[2]：钢琴 / 纯正弦
+IO_PORT "i_key_mode_n" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+// ---- 流水灯 led[0]~led[5]（低电平亮）----
+IO_LOC  "o_led_n[0]" R26;
+IO_PORT "o_led_n[0]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC  "o_led_n[1]" J14;
+IO_PORT "o_led_n[1]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC  "o_led_n[2]" L20;
+IO_PORT "o_led_n[2]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC  "o_led_n[3]" M25;
+IO_PORT "o_led_n[3]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC  "o_led_n[4]" N21;
+IO_PORT "o_led_n[4]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC  "o_led_n[5]" N23;
+IO_PORT "o_led_n[5]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
